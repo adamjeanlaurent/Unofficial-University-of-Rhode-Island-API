@@ -20,7 +20,7 @@ export interface StudentOrgDescription {
 };
 
 export interface CourseDescriptionCache {
-    payload: Map<string, CourseDescription[]> ;
+    payload: Map<string, CourseDescription[]>;
     timeCached: Map<string, number>;
 };
 
