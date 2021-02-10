@@ -40,5 +40,5 @@ app.use('/api/v1/org', studentOrgRouter);
 
 // app listener
 app.listen(process.env.PORT || 3000, () => {
-    console.log('Running!');
+    console.log('app Running!');
 });
