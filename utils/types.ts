@@ -22,9 +22,9 @@ export interface StudentOrgDescription {
 export interface CourseDescriptionCache {
     payload: Map<string, CourseDescription[]> ;
     timeCached: Map<string, number>;
-}
+};
 
 export interface StudentOrgDescriptionCache {
     payload?: StudentOrgDescription[];
     timeCached?: number;
-}
+};
