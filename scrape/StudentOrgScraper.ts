@@ -1,5 +1,5 @@
 // npm
-import { chromium, ChromiumBrowser, Page } from 'playwright'
+import { chromium, ChromiumBrowser, Page } from 'playwright-chromium'
 
 // local
 import { 
@@ -15,7 +15,7 @@ export default class StudentOrgScraper {
 
       // initializes browser and page instances
     private async init(): Promise<void> {
-        this.browser = await chromium.launch();
+        this.browser = await chromium.launch({ chromiumSandbox: false });
         this.page = await this.browser.newPage();
         await this.page.goto(studentOrgsCatalogURL);
     }
