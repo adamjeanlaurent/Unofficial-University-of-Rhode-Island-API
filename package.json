@@ -24,8 +24,7 @@
     "playwright-chromium": "^1.8.0",
     "typescript": "^4.1.4"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "engines": {
     "node": "14.15.1"
   }
