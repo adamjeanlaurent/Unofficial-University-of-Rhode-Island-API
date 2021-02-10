@@ -51,7 +51,7 @@ console.log(allURICourses);
 // Example Usage With JavaScript:
 // *You can call the API with any language of your choice of course*
 
-const response = await fetch('localhost:5000/api/v1/orgs');
+const response = await fetch('localhost:5000/api/v1/org');
 const studentOrgs = await response.json();
 console.log(studentOrgs);
 ```
