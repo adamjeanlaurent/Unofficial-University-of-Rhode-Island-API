@@ -4,7 +4,7 @@
 
 ## Usage
 
-#### GET - /api/v1/course/:courseCode?
+#### GET - /v1/course/:courseCode?
 - Returns course names and descriptions.
 - If courseCode paramater is set, for example as CSC, then all CSC classes only will be returned. - Otherwise if courseCode is not set, then all 4000~ courses offered at the University are returned. 
 - Valid input for courseCode is 3 letter course codes, example, CSC, TMD, STA, MTH, COM, etc.
@@ -15,12 +15,12 @@
 // *You can call the API with any language of your choice of course*
 
 // get all CSC courses
-const response = await fetch('localhost:5000/api/v1/course/CSC');
+const response = await fetch('localhost:5000/v1/course/CSC');
 const allCSCcourses = await response.json();
 console.log(allCSCcourses);
 
 // get all URI courses
-const response = await fetch('localhost:5000/api/v1/course');
+const response = await fetch('localhost:5000/v1/course');
 const allURICourses = await response.json();
 console.log(allURICourses);
 ```
@@ -44,14 +44,14 @@ console.log(allURICourses);
 ```
 
 
-#### GET - /api/v1/org
+#### GET - /v1/org
 - Returns list of all student orgs on campus, with information about each one such as name, location, description, email, phone number, etc. 
 - Data is scraped from the [official student organization list](https://studentorg.apps.uri.edu/).
 ```javascript
 // Example Usage With JavaScript:
 // *You can call the API with any language of your choice of course*
 
-const response = await fetch('localhost:5000/api/v1/org');
+const response = await fetch('localhost:5000/v1/org');
 const studentOrgs = await response.json();
 console.log(studentOrgs);
 ```

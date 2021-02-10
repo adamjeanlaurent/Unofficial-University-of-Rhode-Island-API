@@ -31,8 +31,8 @@ app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
 });
 
 // routes
-app.use('/api/v1/course', courseRouter);
-app.use('/api/v1/org', studentOrgRouter);
+app.use('/v1/course', courseRouter);
+app.use('/v1/org', studentOrgRouter);
 
 // app listener
 app.listen(process.env.PORT || 3000, () => {
