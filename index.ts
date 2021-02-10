@@ -11,7 +11,6 @@ import studentOrgRouter from './routes/studentOrgRoute';
 // setup express
 const app: Express = express();
 app.enable("trust proxy");
-dotenv.config({ path: '../.env' });
 
 // middleware 
 app.use(helmet());
