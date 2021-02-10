@@ -3,7 +3,6 @@ import {  Express, NextFunction , Request, Response } from 'express';
 const express = require('express');
 import cors from 'cors';
 import helmet from 'helmet';
-import * as dotenv from "dotenv";
 
 // local
 import courseRouter from './routes/courseRoute';
