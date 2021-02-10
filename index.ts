@@ -3,7 +3,6 @@ import {  Express, NextFunction , Request, Response } from 'express';
 const express = require('express');
 import cors from 'cors';
 import helmet from 'helmet';
-import morgan from 'morgan';
 import * as dotenv from "dotenv";
 
 // local
@@ -16,7 +15,6 @@ app.enable("trust proxy");
 dotenv.config({ path: '../.env' });
 
 // middleware 
-app.use(morgan('dev'));
 app.use(helmet());
 app.use(cors());
 
