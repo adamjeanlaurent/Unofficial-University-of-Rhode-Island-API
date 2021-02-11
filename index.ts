@@ -24,7 +24,7 @@ app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
             error: 'Error Occured🥞'
         });
     }
-
+    
     return res.json({
         error: error.stack
     });
