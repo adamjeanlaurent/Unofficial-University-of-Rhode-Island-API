@@ -3,9 +3,9 @@ import { Router,  Request, Response, NextFunction } from 'express';
 import rateLimit, { RateLimit } from 'express-rate-limit';
 
 // local
-import CourseScraper from '../scrape/CourseScraper';
 import { CourseDescription, CourseDescriptionCache } from '../utils/types';
 import { courseCodes, cacheTimeLimit, SECOND, MINUTE } from '../utils/constants';
+import CourseModel from '../models/course';
 
 let cache: CourseDescriptionCache = { payload: new Map<string, CourseDescription[]>(), timeCached: new Map<string, number>() };
 
@@ -48,8 +48,15 @@ router.get('/:courseCode?', rateLimiter, async (req: Request, res: Response, nex
     }
     
     try {
-        const courseCatalogScraper: CourseScraper = new CourseScraper();
-        const courseDescriptions: CourseDescription[] = await courseCatalogScraper.getCourseDescriptions(courseCode);
+        let courseDescriptions: CourseDescription[] = [];
+        
+        if(courseCode === '') {
+            courseDescriptions = await CourseModel.find({});
+        } 
+        
+        else {
+            courseDescriptions = await CourseModel.find({ courseCode: courseCode });
+        }
 
         let timeCached: number = Date.now();
 

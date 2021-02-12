@@ -15,7 +15,7 @@ export default class CourseScraper {
         this.page = await this.browser.newPage();
         await this.page.goto(courseCatalogURL);
     }
-    
+     
     async getCourseDescriptions(courseCode?: string): Promise<CourseDescription[]> {
         await this.init();
 
@@ -34,7 +34,11 @@ export default class CourseScraper {
             return results.map((result) => {
                 const title = result.querySelector('.showTitle')?.querySelector('b')?.textContent!;
                 const description = result.querySelector('.showDescription')?.textContent!;
-                const courseDescription: CourseDescription = { title: title, description: description };
+                const courseDescription: CourseDescription = { 
+                    title: title, 
+                    description: description, 
+                    courseCode: title.substring(0,3)
+                };
                 return courseDescription;
             });
         });

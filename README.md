@@ -1,5 +1,5 @@
 # Unofficial University Of Rhode Island API
-- This is a free unofficial API for University Of Rhode Island course and student org data (and maybe more coming).
+- This is a free unofficial API for University Of Rhode Island course and student org data (and maybe more coming 🙂 ).
 - Data is scraped from official University Of Rhode Island websites.
 
 ## Usage
@@ -15,12 +15,12 @@
 // *You can call the API with any language of your choice of course*
 
 // get all CSC courses
-const response = await fetch('localhost:5000/v1/course/CSC');
+const response = await fetch('unofficial-uri-api/v1/course/CSC');
 const allCSCcourses = await response.json();
 console.log(allCSCcourses);
 
 // get all URI courses
-const response = await fetch('localhost:5000/v1/course');
+const response = await fetch('unofficial-uri-api/v1/course');
 const allURICourses = await response.json();
 console.log(allURICourses);
 ```
@@ -51,7 +51,7 @@ console.log(allURICourses);
 // Example Usage With JavaScript:
 // *You can call the API with any language of your choice of course*
 
-const response = await fetch('localhost:5000/v1/org');
+const response = await fetch('unofficial-uri-api/v1/org');
 const studentOrgs = await response.json();
 console.log(studentOrgs);
 ```

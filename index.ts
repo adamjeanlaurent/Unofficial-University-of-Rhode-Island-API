@@ -3,6 +3,7 @@ import {  Express, NextFunction , Request, Response } from 'express';
 const express = require('express');
 import cors from 'cors';
 import helmet from 'helmet';
+import dotenv from "dotenv";
 
 // local
 import courseRouter from './routes/courseRoute';
@@ -11,6 +12,7 @@ import studentOrgRouter from './routes/studentOrgRoute';
 // setup express
 const app: Express = express();
 app.enable("trust proxy");
+dotenv.config({ path:'../env' });
 
 // middleware 
 app.use(helmet());

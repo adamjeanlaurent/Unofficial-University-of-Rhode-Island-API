@@ -3,7 +3,7 @@ import { Router,  Request, Response, NextFunction } from 'express';
 import rateLimit, { RateLimit } from 'express-rate-limit';
 
 // local
-import StudentOrgScraper from '../scrape/StudentOrgScraper';
+import StudentOrgModel from '../models/org';
 import { StudentOrgDescription, StudentOrgDescriptionCache } from '../utils/types';
 import { cacheTimeLimit, SECOND, MINUTE } from '../utils/constants';
 
@@ -35,9 +35,8 @@ router.get('/', rateLimiter, async(req: Request, res: Response, next: NextFuncti
     }
 
     try {
-        const studentOrgScraper: StudentOrgScraper = new StudentOrgScraper();
-        const studentOrgDescriptions: StudentOrgDescription[] = await studentOrgScraper.getStudentsOrgDescriptions();
-
+        const studentOrgDescriptions: StudentOrgDescription[] = await StudentOrgModel.find({});
+        
         const timeCached: number = Date.now();
         if(studentOrgDescriptions.length > 0) {
             // reset cache
