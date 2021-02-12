@@ -4,7 +4,7 @@
 
 ## Usage
 
-#### GET - /v1/course/:courseCode?
+# GET - /v1/course/:courseCode?
 - Returns course names and descriptions.
 - If courseCode paramater is set, for example as CSC, then all CSC classes only will be returned. - Otherwise if courseCode is not set, then all 4000~ courses offered at the University are returned. 
 - Valid input for courseCode is 3 letter course codes, example, CSC, TMD, STA, MTH, COM, etc.
@@ -31,11 +31,13 @@ console.log(allURICourses);
   "courses": [
     {
       "title": "CSC 101: Computing Concepts",
-      "description": "LEC: (4 crs.) Capabilities and limitations of computers. Applications of computers in today's society. Overview of computing systems and programs. Students will complete several projects using a computer. (Lec. 3, Lab. 2/Online) Not open to students who have credit in any college-level computer science course, or to computer science majors. (B3) (B4)"
+      "description": "LEC: (4 crs.) Capabilities and limitations of computers. Applications of computers in today's society. Overview of computing systems and programs. Students will complete several projects using a computer. (Lec. 3, Lab. 2/Online) Not open to students who have credit in any college-level computer science course, or to computer science majors. (B3) (B4)",
+      "courseCode": "CSC"
     },
     {
       "title": "CSC 104: Puzzles + Games = Analytical Thinking",
-      "description": "LEC: (4 crs.) Cross-listed as (CSC), MTH 104. Introduces mathematical problem solving and computational thinking through puzzles and games. Students work in small groups on activities to enhance their analytic abilities. Topics include numbers, probability, logic, algorithms, and graphs. (Lec. 4) Pre: High school mathematics. No programming required. (B3)"
+      "description": "LEC: (4 crs.) Cross-listed as (CSC), MTH 104. Introduces mathematical problem solving and computational thinking through puzzles and games. Students work in small groups on activities to enhance their analytic abilities. Topics include numbers, probability, logic, algorithms, and graphs. (Lec. 4) Pre: High school mathematics. No programming required. (B3)",
+      "courseCode": "CSC"
     },
     .......... more courses
   ],
@@ -44,7 +46,7 @@ console.log(allURICourses);
 ```
 
 
-#### GET - /v1/org
+# GET - /v1/org
 - Returns list of all student orgs on campus, with information about each one such as name, location, description, email, phone number, etc. 
 - Data is scraped from the [official student organization list](https://studentorg.apps.uri.edu/).
 ```javascript
