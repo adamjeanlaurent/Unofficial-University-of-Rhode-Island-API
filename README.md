@@ -15,12 +15,12 @@
 // *You can call the API with any language of your choice of course*
 
 // get all CSC courses
-const response = await fetch('unofficial-uri-api/v1/course/CSC');
+const response = await fetch('https://unofficial-uri-api.herokuapp.com/v1/course/CSC');
 const allCSCcourses = await response.json();
 console.log(allCSCcourses);
 
 // get all URI courses
-const response = await fetch('unofficial-uri-api/v1/course');
+const response = await fetch('https://unofficial-uri-api.herokuapp.com/v1/course');
 const allURICourses = await response.json();
 console.log(allURICourses);
 ```
@@ -53,7 +53,7 @@ console.log(allURICourses);
 // Example Usage With JavaScript:
 // *You can call the API with any language of your choice of course*
 
-const response = await fetch('unofficial-uri-api/v1/org');
+const response = await fetch('https://unofficial-uri-api.herokuapp.com/v1/org');
 const studentOrgs = await response.json();
 console.log(studentOrgs);
 ```
