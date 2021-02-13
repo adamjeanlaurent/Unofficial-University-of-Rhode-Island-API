@@ -50,7 +50,7 @@ async function insertOrgData() {
 async function insertCourseData() {
     const courseScraper: CourseScraper = new CourseScraper();
     const courses: Array<CourseDescription> = await courseScraper.getCourseDescriptions();
-
+    
     for(let course of courses) {
         const newCourse = new CourseModel({
             name: course.title,

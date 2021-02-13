@@ -18,6 +18,6 @@ const Org: Schema = new mongoose.Schema({
         category:    { type: String }
 });
 
-const OrgModel = mongoose.model<IStudentOrgDescriptionModel>('org', Org);
+const OrgModel: Model<IStudentOrgDescriptionModel> = mongoose.model<IStudentOrgDescriptionModel>('org', Org);
 
 export default OrgModel;

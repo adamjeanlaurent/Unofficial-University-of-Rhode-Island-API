@@ -9,6 +9,6 @@ const Course: Schema = new mongoose.Schema({
     courseCode:  { type: String }
 });
 
-const CourseModel = mongoose.model<ICourseDescriptionModel>('course', Course);
+const CourseModel: Model<ICourseDescriptionModel> = mongoose.model<ICourseDescriptionModel>('course', Course);
 
 export default CourseModel;
