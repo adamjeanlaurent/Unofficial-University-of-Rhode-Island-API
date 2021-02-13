@@ -22,7 +22,7 @@ router.get('/:courseCode?', rateLimiter, async (req: Request, res: Response, nex
     // check for valid course code
     if(courseCode !== '' && !courseCodes.get(courseCode)) {
         return res.json({
-            error: 'Invalid course code.'
+            error: 'Invalid course code'
         });
     }
     
