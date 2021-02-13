@@ -13,7 +13,7 @@ async function insertAllData() {
     await clearDB();
     await insertOrgData();
     await insertCourseData();
-    return;
+    console.log('db successfully loaded 😇');
 }
 
 async function clearDB() {

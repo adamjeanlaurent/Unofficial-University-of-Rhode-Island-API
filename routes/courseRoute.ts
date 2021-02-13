@@ -43,8 +43,14 @@ router.get('/:courseCode?', rateLimiter, async (req: Request, res: Response, nex
     if(cacheExists && safeToUseCache) {
         // not time to re-cache yet
         // send cached data
-        if(courseCode === '') return res.json(cache.payload.get('full'));
-        else return res.json(cache.payload.get(courseCode));
+        if(courseCode === '') return res.json({
+            courses: cache.payload.get('full'),
+            timeCached: cache.timeCached
+        });
+        else return res.json({
+            courses: cache.payload.get(courseCode),
+            timeCached: cache.timeCached 
+        });
     }
     
     try {

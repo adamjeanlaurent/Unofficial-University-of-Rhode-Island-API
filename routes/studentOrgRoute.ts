@@ -49,7 +49,7 @@ router.get('/', rateLimiter, async(req: Request, res: Response, next: NextFuncti
             timeCached: timeCached
         });
     }
-
+    
     catch(error: any) {
         return next(error);
     }
