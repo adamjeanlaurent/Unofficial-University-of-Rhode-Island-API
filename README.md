@@ -17,12 +17,28 @@
 // get all CSC courses
 const response = await fetch('https://unofficial-uri-api.herokuapp.com/v1/course/CSC');
 const allCSCcourses = await response.json();
-console.log(allCSCcourses);
+
+if(allCSCcourses.error) {
+  // error occured
+  console.log(`error occured!\n ${allCSCcourses.error}`);
+}
+else {
+  // no error
+  console.log(allCSCcourses);
+}
 
 // get all URI courses
 const response = await fetch('https://unofficial-uri-api.herokuapp.com/v1/course');
 const allURICourses = await response.json();
-console.log(allURICourses);
+
+if(allURICourses.error) {
+  // error occured
+  console.log(`error occured!\n ${allURICourses.error}`);
+}
+else {
+  // no error
+  console.log(allURICourses);
+}
 ```
 
 ```json
@@ -55,7 +71,15 @@ console.log(allURICourses);
 
 const response = await fetch('https://unofficial-uri-api.herokuapp.com/v1/org');
 const studentOrgs = await response.json();
-console.log(studentOrgs);
+
+if(studentOrgs.error) {
+  // error occured
+  console.log(`error occured!\n ${studentOrgs.error}`);
+}
+else {
+  // no error
+  console.log(studentOrgs);
+}
 ```
 ```json
 // Example Response:

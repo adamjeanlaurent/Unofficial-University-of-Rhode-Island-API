@@ -45,7 +45,7 @@ async function insertOrgData() {
         newStudentOrg.save();
     }
     return;
-} 
+}
 
 async function insertCourseData() {
     const courseScraper: CourseScraper = new CourseScraper();

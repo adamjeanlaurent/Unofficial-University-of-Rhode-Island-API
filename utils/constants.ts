@@ -1,12 +1,12 @@
 export const courseCatalogURL: string = 'https://web.uri.edu/catalog/course-descriptions/';
 export const studentOrgsCatalogURL: string = 'https://studentorg.apps.uri.edu/';
 
-export const SECOND = 1000;
-export const MINUTE = 60 * SECOND;
-export const HOUR = 60 * MINUTE;
-export const DAY = 24 * HOUR;
+export const SECOND: number = 1000;
+export const MINUTE: number = 60 * SECOND;
+export const HOUR: number = 60 * MINUTE;
+export const DAY: number = 24 * HOUR;
 
-export const cacheTimeLimit = 10 * DAY;
+export const cacheTimeLimit: number = 10 * DAY;
 
 export const courseCodes: Map<string, string>  = new Map(
     [
