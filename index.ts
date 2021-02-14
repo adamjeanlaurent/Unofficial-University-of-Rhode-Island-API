@@ -3,7 +3,8 @@ import {  Express, NextFunction , Request, Response } from 'express';
 const express = require('express');
 import cors from 'cors';
 import helmet from 'helmet';
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
+import morgan from 'morgan';
 
 // local
 import courseRouter from './routes/courseRoute';
@@ -17,6 +18,7 @@ dotenv.config({ path:'../env' });
 // middleware 
 app.use(helmet());
 app.use(cors());
+app.use(morgan('dev'));
 
 // error handler
 app.use((error: Error, req: Request, res: Response, next: NextFunction) => {

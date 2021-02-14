@@ -42,7 +42,7 @@ export default class StudentOrgScraper {
                 };
                 const tableRows = panelContent.querySelectorAll('tr');
                 for(let tableRow of tableRows) {                
-                    const tableRowData = tableRow.querySelectorAll('td');
+                    const tableRowData: NodeListOf<HTMLTableDataCellElement> = tableRow.querySelectorAll('td');
                     const category: string = tableRowData[0]?.querySelector('strong')?.textContent?.trim()!;
                     let value: string = tableRowData[1]?.textContent?.trim()!;
                     // value = value.replace(/(\r\n|\n|\r)/gm,"");

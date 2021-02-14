@@ -32,8 +32,8 @@ export default class CourseScraper {
         // scrape course titles and descriptions
         const courseDescriptions: CourseDescription[] = await this.page.$$eval('.showResult', (results) => {
             return results.map((result) => {
-                const title = result.querySelector('.showTitle')?.querySelector('b')?.textContent!;
-                const description = result.querySelector('.showDescription')?.textContent!;
+                const title: string = result.querySelector('.showTitle')?.querySelector('b')?.textContent!;
+                const description: string = result.querySelector('.showDescription')?.textContent!;
                 const courseDescription: CourseDescription = { 
                     title: title, 
                     description: description, 
