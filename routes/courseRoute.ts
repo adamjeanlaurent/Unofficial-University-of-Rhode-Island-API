@@ -29,7 +29,7 @@ router.get('/:courseCode?', rateLimiter, async (req: Request, res: Response, nex
     // check that cache exists for course code
     const cacheExists: boolean = (courseCode === '') ? cache.payload.has('full') : cache.payload.has(courseCode);
     let safeToUseCache: boolean = false;
-
+    
     // if cache exists
     // check to see if if the last time it was cached falls into the window that it is safe to use this cache
     // or that we need to re-cache it
@@ -43,14 +43,18 @@ router.get('/:courseCode?', rateLimiter, async (req: Request, res: Response, nex
     if(cacheExists && safeToUseCache) {
         // not time to re-cache yet
         // send cached data
-        if(courseCode === '') return res.json({
-            courses: cache.payload.get('full'),
-            timeCached: cache.timeCached.get('full')
-        });
-        else return res.json({
-            courses: cache.payload.get(courseCode),
-            timeCached: cache.timeCached.get(courseCode)
-        });
+        if(courseCode === '') {
+            return res.json({
+                courses: cache.payload.get('full'),
+                timeCached: cache.timeCached.get('full')
+            });
+        }
+        else {
+            return res.json({
+                courses: cache.payload.get(courseCode),
+                timeCached: cache.timeCached.get(courseCode)
+            });
+        } 
     }
     
     try {

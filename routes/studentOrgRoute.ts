@@ -12,7 +12,7 @@ let cache: StudentOrgDescriptionCache = {};
 const rateLimiter: RateLimit = rateLimit({
     windowMs: 20 * MINUTE,
     max: 200
-});
+}); 
 
 const router: Router = Router();
 
@@ -33,7 +33,7 @@ router.get('/', rateLimiter, async(req: Request, res: Response, next: NextFuncti
             timeCached: cache.timeCached
         });
     }
-
+    
     try {
         const studentOrgDescriptions: StudentOrgDescription[] = await StudentOrgModel.find({});
         
