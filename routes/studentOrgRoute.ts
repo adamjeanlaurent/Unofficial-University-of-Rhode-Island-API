@@ -31,7 +31,7 @@ router.get('/', rateLimiter, async(req: Request, res: Response, next: NextFuncti
         return res.json({
             studentOrgDescriptions: cache.payload,
             timeCached: cache.timeCached
-        });
+        }); 
     }
     
     try {
@@ -43,7 +43,7 @@ router.get('/', rateLimiter, async(req: Request, res: Response, next: NextFuncti
             cache.payload = studentOrgDescriptions;
             cache.timeCached = timeCached;
         }
-
+        
         return res.json({
             orgs: studentOrgDescriptions,
             timeCached: timeCached

@@ -1,4 +1,4 @@
-import mongoose, { Document } from 'mongoose';
+import { Document } from 'mongoose';
 
 export interface CourseDescription {
     title: string;
@@ -22,8 +22,8 @@ export interface StudentOrgDescription {
     category?: string
 };
 
-export interface ICourseDescriptionModel extends CourseDescription, mongoose.Document { }
-export interface IStudentOrgDescriptionModel extends StudentOrgDescription, mongoose.Document { }
+export interface ICourseDescriptionModel extends CourseDescription, Document {}
+export interface IStudentOrgDescriptionModel extends StudentOrgDescription, Document {}
 
 export interface CourseDescriptionCache {
     payload: Map<string, CourseDescription[]>;

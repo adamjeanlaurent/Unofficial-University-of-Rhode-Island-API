@@ -4,7 +4,7 @@ import rateLimit, { RateLimit } from 'express-rate-limit';
 
 // local
 import { CourseDescription, CourseDescriptionCache } from '../utils/types';
-import { courseCodes, cacheTimeLimit, SECOND, MINUTE } from '../utils/constants';
+import { courseCodes, cacheTimeLimit, MINUTE } from '../utils/constants';
 import CourseModel from '../models/course';
 
 let cache: CourseDescriptionCache = { payload: new Map<string, CourseDescription[]>(), timeCached: new Map<string, number>() };

@@ -1,7 +1,6 @@
-import { Mode } from 'fs';
 import { Model, Schema } from 'mongoose';
 import mongoose from '../db/db';
-import { CourseDescription, ICourseDescriptionModel } from '../utils/types';
+import { ICourseDescriptionModel } from '../utils/types';
 
 const Course: Schema = new mongoose.Schema({
     name:        { type: String },

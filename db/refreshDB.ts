@@ -10,6 +10,18 @@ import CourseScraper from '../scrape/CourseScraper';
 import StudentOrgScraper from '../scrape/StudentOrgScraper';
 
 async function insertAllData() {
+    // test that data can be scraped 
+    const studentOrgScraper: StudentOrgScraper = new StudentOrgScraper();
+    const studentOrgs: Array<StudentOrgDescription> = await studentOrgScraper.getStudentsOrgDescriptions();
+
+    const courseScraper: CourseScraper = new CourseScraper();
+    const courses: Array<CourseDescription> = await courseScraper.getCourseDescriptions();
+
+    if(courses.length === 0 || studentOrgs.length === 0) {
+        console.log('data could not be scraped \n db not cleared to prevent data loss😬');
+        return;
+    }
+    
     await clearDB();
     await insertOrgData();
     await insertCourseData();

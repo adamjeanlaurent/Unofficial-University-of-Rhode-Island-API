@@ -15,10 +15,10 @@ export default class CourseScraper {
         this.page = await this.browser.newPage();
         await this.page.goto(courseCatalogURL);
     }
-     
+    
     async getCourseDescriptions(courseCode?: string): Promise<CourseDescription[]> {
         await this.init();
-
+        
         if(courseCode) {
              // select single course from dropdown
             await this.page.selectOption('#selectCourse', { label: courseCodes.get(courseCode) });
@@ -36,7 +36,7 @@ export default class CourseScraper {
                 const description: string = result.querySelector('.showDescription')?.textContent!;
                 const courseDescription: CourseDescription = { 
                     title: title, 
-                    description: description, 
+                    description: description,
                     courseCode: title.substring(0,3)
                 };
                 return courseDescription;

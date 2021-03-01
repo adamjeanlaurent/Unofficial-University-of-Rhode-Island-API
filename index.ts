@@ -25,7 +25,7 @@ app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
     res.status(500);
     if(process.env.NODE_ENV === 'production') {
         return res.json({
-            error: 'Error Occured🥞'
+            error: 'Internal Error Occured🥞'
         });
     }
     

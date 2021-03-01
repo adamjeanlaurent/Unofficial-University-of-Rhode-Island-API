@@ -1,5 +1,5 @@
 // npm
-import { chromium, ChromiumBrowser, Page } from 'playwright-chromium'
+import { chromium, ChromiumBrowser, Page } from 'playwright-chromium';
 
 // local
 import { 

@@ -1,6 +1,6 @@
 import { Model, Schema } from 'mongoose';
 import mongoose from '../db/db';
-import { StudentOrgDescription, IStudentOrgDescriptionModel } from '../utils/types';
+import { IStudentOrgDescriptionModel } from '../utils/types';
 
 const Org: Schema = new mongoose.Schema({
         name:        { type: String },
