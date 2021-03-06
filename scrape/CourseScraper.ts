@@ -26,8 +26,8 @@ export default class CourseScraper {
         
         // click search button
         await this.page.click('#clickSearch');
-        // wait 2 seconds for page to load
-        await this.page.waitForTimeout(2 * SECOND);
+        // wait for page to load
+        await this.page.waitForTimeout(10 * SECOND);
         
         // scrape course titles and descriptions
         const courseDescriptions: CourseDescription[] = await this.page.$$eval('.showResult', (results) => {

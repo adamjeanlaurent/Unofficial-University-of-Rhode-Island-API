@@ -28,7 +28,7 @@ async function insertAllData() {
         await insertCourseData();
         console.log('db successfully loaded 😇');
     }
-
+    
     catch(e: any) {
         console.log(`error caught *::::::::::* -> ${e.message}`);
     }
@@ -68,6 +68,7 @@ async function insertOrgData() {
 async function insertCourseData() {
     const courseScraper: CourseScraper = new CourseScraper();
     const courses: Array<CourseDescription> = await courseScraper.getCourseDescriptions();
+    console.log(courses.length);
     
     for(let course of courses) {
         const newCourse = new CourseModel({
@@ -75,8 +76,8 @@ async function insertCourseData() {
             description: course.description,
             courseCode: course.courseCode
         });
-
-        newCourse.save();
+        
+        await newCourse.save();
     }
     return;
 }

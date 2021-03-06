@@ -61,13 +61,13 @@ router.get('/:courseCode?', rateLimiter, async (req: Request, res: Response, nex
         let courseDescriptions: CourseDescription[] = [];
         
         if(courseCode === '') {
-            courseDescriptions = await CourseModel.find({});
-        } 
+            courseDescriptions = await CourseModel.find({}, { _id:0, __v:0 });
+        }
         
         else {
-            courseDescriptions = await CourseModel.find({ courseCode: courseCode });
+            courseDescriptions = await CourseModel.find({ courseCode: courseCode }, { _id:0, __v:0 });
         }
-
+        
         let timeCached: number = Date.now();
 
         // reset cache

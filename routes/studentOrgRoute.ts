@@ -35,7 +35,7 @@ router.get('/', rateLimiter, async(req: Request, res: Response, next: NextFuncti
     }
     
     try {
-        const studentOrgDescriptions: StudentOrgDescription[] = await StudentOrgModel.find({});
+        const studentOrgDescriptions: StudentOrgDescription[] = await StudentOrgModel.find({}, { _id:0, __v:0 });
         
         const timeCached: number = Date.now();
         if(studentOrgDescriptions.length > 0) {
